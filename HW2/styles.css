@@ -1,0 +1,125 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    background: purple;
+    font-family: sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    color: #fff;
+}
+
+header, footer {
+    background: #333;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section, footer {
+    padding: 2%;
+}
+
+ul {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex: 1 0 100px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style-type: none;
+    
+}
+
+nav a:hover {
+    background: #444;
+    color: lightgray;
+}
+
+section.top {
+    background: rgb(0,131,22);
+    background: linear-gradient(0deg, rgba(0,131,22,1) 0%, rgba(45,201,0,1) 25%, rgba(45,201,0,1) 75%, rgba(0,131,22,1) 100%);
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mdl-flex, .btm-flex {
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+section {    
+    flex: 1 1 50%;
+    height: 50vh;
+}
+
+.text-mdl, .text-btm {
+    display: flex;
+    align-items: center;
+}
+
+.text-mdl {  
+    background: rgb(9,0,159);
+    background: linear-gradient(0deg, rgba(9,0,159,1) 0%, rgba(0,0,255,1) 25%, rgba(0,0,255,1) 75%, rgba(0,0,191,1) 100%);
+    text-align: right;
+}
+
+.text-btm {    
+    background: rgb(156,0,0);
+    background: linear-gradient(0deg, rgba(156,0,0,1) 0%, rgba(255,0,0,1) 25%, rgba(255,0,0,1) 75%, rgba(157,0,0,1) 100%);
+    text-align: left;
+}
+
+h2 {
+    text-decoration: underline;
+    padding-bottom: 1rem;
+}
+
+.img-1, .img-2 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;      
+}
+
+.img-1 {    
+    background-image: url("img/darbyAndHeidi.jpg");
+}
+
+.img-2 {
+    background-image: url("img/pancho.jpg"); 
+}
+
+
+@media (max-width: 500px) {
+    
+    .btm-flex { 
+        flex-wrap: wrap-reverse;        
+    }
+    section {
+        flex: 1 1 100%;
+        height: 25vh;
+    }
+    .text-mdl , .text-btm {
+        text-align: center;
+    }
+}
