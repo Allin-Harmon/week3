@@ -1,35 +1,69 @@
-body {
-    background: #333;
-    color: #fff;
-    font-family: sans-serif;
+/*! Everything looked great on HW #1, I think the way you did everything is good as is. I added in a few other means of accomplishing the same things, you might already be aware of, check them out, let me know if you have any questions. Github pull request looked good too.  */
+
+* {
+	box-sizing: border-box; /*? I might have misspoke on this. Border-box will also push the border inside the container retaining it's width. I.E. a 100px X 100px box with a 5px border, with border-box the box will have a total size of 100px X 100px. With content-box, which is the default will make the total size 110px X 110px.  */
+	/*! I turned this on so I can set the width to 50% without the boxes wrapping, alternatively you could only turn flex-wrap on in the media query and you wouldn't need this. Let me know if any of this is confusing, maybe not worded the best. */
 }
+
+body {
+	background: #333;
+	color: #fff;
+	font-family: sans-serif;
+}
+/*? I added a blank line here, I think it just makes it a little cleaner to read */
 div.container {
-    width: 500px;
-    height: 100vh;    
-    margin: 0 auto;
-    border: 1px solid green;
-    display: flex;
+	width: 500px;
+	height: 100vh;
+	margin: 0 auto;
+	border: 1px solid green;
+	display: flex; /*? <---Flex is the preferred solution here as it doesn't have that inline-block gap, I didn't want to introduce it just because we hadn't covered it in class. Great work! */
+	flex-wrap: wrap; /*? Added this so when we set our box width to 100% they'll start on different lines. */
+	align-content: flex-start; /*! I don't know if I actually talked about this one in class, but it is a little different than align-items, in short align-items is for single line flex boxes and align-content is for multi line flex boxes. Since we are wrapping the blue box on to the next line we now have a multi line flex box. For what its worth align-items has no effect on multi lines and align-content has no effect on single lines so just make sure you use the appropriate one for the appropriate situation. It might be easiest to just turn on and off align-content to play with it. */
+	/*? READ MORE: https://stackoverflow.com/questions/40890613/remove-space-gaps-between-multiple-lines-of-flex-items-when-they-wrap */
 }
 
 div.box {
-    width: 50%;
-    height: 25%;
+	/* width: 50%; */ /*? <---Just commenting this out to demo the inline-block gap "problem" */
+	/* display: inline-block; */
+	/* width: 50%; */ /*? Notice the gap between the two boxes and that you can't use 50% */
+	/* width: 49%; */ /*? READ MORE: https://stackoverflow.com/questions/19038799/why-is-there-an-unexplainable-gap-between-these-inline-block-div-elements */
+	height: 25%;
+	width: 50%;
 }
+
+/*? Pretty sure you already know about it just showing some other ways for shits and giggles */
 
 div.box:first-child {
-    border: 1px solid red;
+	border: 1px solid red;
 }
+
+/* div.box:nth-child(1) {
+	border: 1px solid red;
+} */
+
+/* div.box:nth-child(odd) {
+	border: 1px solid red;
+} */
 
 div.box:last-child {
-    border: 1px solid blue;
+	border: 1px solid blue;
 }
 
+/* div.box:nth-child(2) {
+	border: 1px solid blue;
+} */
+
+/* div.box:nth-child(even) {
+	border: 1px solid blue;
+} */
+
 @media (max-width: 500px) {
-    div.container {     
-        width: 100%;   
-        display: block;
-    }
-    
-    div.box { 
-        width: 100%;
+	div.container {
+		width: 100%;
+		/* display: block; */
+	}
+
+	div.box {
+		width: 100%;
+	} /*! <--- Missing closing bracket here*/
 }
