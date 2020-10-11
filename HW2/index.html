@@ -1,57 +1,78 @@
+<!--! I added some feedback in HW2/index.html & styles.css. Everything looked good Quick notes: I think some of the markup looks a redundant, however I had no issue reading so if you'd like to continue with your doing I think that would be fine. Classes and ids were good logically named. You didn't make the nav stick to the top of the browser, not sweating it as I know you built this solution from the images and that may have not been apparent. *I'm not asking you to add this to every HW* this is just a something to consider, I've seen you break up your markup in to logical sections with comments same with CSS. I would recommend continuing to do that in the development space, I do not expect you to do this for homework just wanted to mention it. If you set a value on a  parent class and the child has the same value I think its better form to set it to 100% instead of reiterating it. I added a folder called harcourt_solution that has my version of this project the responsiveness achieves the same thing but I did it quite differently, might be valuable to see it from a different perspective. Overall great job homework 2 looks great -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 3 Homework 2</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="main-container">
-        <header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Week 3 Homework 2</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!--! Changed up the formatting a bit to my taste, you may or may not like it, the way you have it is readable and consistent so stick with whatever you like. -->
+		<div class="main-container">
+			<header>
+				<nav>
+					<ul>
+						<a href="#" target="_blank"><li>Home</li></a>
+						<a href="#" target="_blank"><li>About</li></a>
+						<a href="#" target="_blank"><li>Contact</li></a>
+					</ul>
+				</nav>
+			</header>
 
-            <nav>
-                <ul>
-                        <a href="#" target="_blank"><li>Home</li></a>
-                        <a href="#" target="_blank"><li>About</li></a>
-                        <a href="#" target="_blank"><li>Contact</li></a>
-                </ul>
-            </nav>
-        </header>
+			<section class="top">
+				<!--<article>-->
+				<!--! Don't think this <article> is necessary, I would cut it. You'll have to set the flex-direction on the top class to column though. -->
+				<h2>Generic Heading</h2>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel dolore
+					ad necessitatibus similique assumenda, sit quisquam incidunt
+					doloremque porro saepe unde aperiam doloribus repellat accusamus.
+					Officia, error dolores! Obcaecati, ratione!
+				</p>
+				<!-- </article> -->
+			</section>
 
-        <section class="top">
-            <article>
-                <h2>Generic Heading</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel dolore ad necessitatibus similique assumenda, sit quisquam incidunt doloremque porro saepe unde aperiam doloribus repellat accusamus. Officia, error dolores! Obcaecati, ratione!</p>
-            </article>
-        </section>
+			<article class="mdl-flex">
+				<section class="img-1" role="img" aria-label="cat and dog on a couch">
+					<!--? Added in those "alt" tags for background images here just for shits and giggles -->
+					<!-- <img src="img/darbyAndHeidi.jpg" alt="Cat and dog on a couch"> -->
+					<!--? I understand why it was here and what you were trying to do with this. I always try to make a habit of going back and removing any commented out code when I'm done with something. -->
+				</section>
+				<section class="text-mdl">
+					<div class="container">
+						<h2>Content</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+							aperiam dolorum placeat optio autem.
+						</p>
+					</div>
+				</section>
+			</article>
+			<article class="btm-flex">
+				<section class="text-btm">
+					<div class="container">
+						<h2>Content</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+							aperiam dolorum placeat optio autem.
+						</p>
+					</div>
+				</section>
+				<section
+					class="img-2"
+					role="img"
+					aria-label="Cat laying in a cat tower"
+				>
+					<!-- <img src="img/pancho.jpg" alt="Cat laying in a cat tower"> -->
+				</section>
+				<!-- </section> -->
+				<!--! Extra un-needed closing <section> -->
+			</article>
 
-        <article class="mdl-flex">
-            <section class="img-1">
-                <!-- <img src="img/darbyAndHeidi.jpg" alt="Cat and dog on a couch"> -->
-            </section>
-            <section class="text-mdl">
-                <div class="container">
-                    <h2>Content</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam dolorum placeat optio autem.</p>
-                </div>
-            </section>
-        </article>
-        <article  class="btm-flex">
-            <section class="text-btm">
-                <div class="container">
-                    <h2>Content</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam dolorum placeat optio autem.</p>
-                </div>
-            </section>
-            <section class="img-2">
-                <!-- <img src="img/pancho.jpg" alt="Cat laying in a cat tower"> -->
-            </section>
-            </section>
-        </article>
-
-        <footer><p>Copyright &#169; 2020</p></footer>
-
-    </div>
-</body>
+			<footer><p>Copyright &#169; 2020</p></footer>
+			<!--? Might be easier to just remember &copy; as opposed to &#169; has the same output -->
+		</div>
+	</body>
 </html>

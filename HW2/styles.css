@@ -1,125 +1,167 @@
+/*! I added some feedback in HW2/index.html & styles.css. Everything looked good Quick notes: I think some of the markup looks a redundant, however I had no issue reading so if you'd like to continue with your doing I think that would be fine. Classes and ids were good logically named. You didn't make the nav stick to the top of the browser, not sweating it as I know you built this solution from the images and that may have not been apparent. *I'm not asking you to add this to every HW* this is just a something to consider, I've seen you break up your markup in to logical sections with comments same with CSS. I would recommend continuing to do that in the development space, I do not expect you to do this for homework just wanted to mention it. If you set a value on a  parent class and the child has the same value I think its better form to set it to 100% instead of reiterating it. I added a folder called harcourt_solution that has my version of this project the responsiveness achieves the same thing but I did it quite differently, might be valuable to see it from a different perspective. Overall great job homework 2 looks great. */
+
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    background: purple;
-    font-family: sans-serif;
+	margin: 0 auto;
+	background: purple;
+	font-family: sans-serif;
 }
 
 .main-container {
-    width: 100%;
-    color: #fff;
+	width: 100%;
+	color: #fff;
 }
 
-header, footer {
-    background: #333;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/*! I like that you put the overlapping header and footer styles in one rule. I didn't do this myself and think this is a better solution. */
+header,
+footer {
+	background: #333;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-section, footer {
-    padding: 2%;
+/*! The header needs to stick to the top of the browser. Added these styles to make that happen. */
+header {
+	width: 100%;
+	position: fixed;
+	/*? The top: 0; left: 0; don't actually have any effect as it is starting there by default however a lot of times I like to add it for the sake of being explicit. */
+	top: 0;
+	left: 0;
+}
+
+section,
+footer {
+	padding: 2%; /*? I like the idea of percent paddings, are you using these to make things more responsive? I've always used rems and never thought to use %'s */
 }
 
 ul {
-    height: 50px;
-    display: flex;
-    justify-content: center;
+	/* height: 50px; */
+	height: 100%; /*? Using a 100% because the parent is already 50px and if we need to resize for mobile I don't have to change the value in two places. */
+	display: flex;
+	justify-content: center;
 }
 
 nav a {
-    color: #fff;
-    height: 100%;
-    display: flex;
-    flex: 1 0 100px;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    list-style-type: none;
-    
+	color: #fff;
+	height: 100%;
+	display: flex;
+	flex: 1 0 100px;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	list-style-type: none;
+	padding: 0.5rem 1rem; /*? I added this here because I think it makes the hover effect nicer with the padding making it a little fatter  */
 }
 
+/*! Nice job adding in a hover effect, I actually didn't add one in on mine. */
 nav a:hover {
-    background: #444;
-    color: lightgray;
+	background: #444;
+	color: lightgray;
 }
 
 section.top {
-    background: rgb(0,131,22);
-    background: linear-gradient(0deg, rgba(0,131,22,1) 0%, rgba(45,201,0,1) 25%, rgba(45,201,0,1) 75%, rgba(0,131,22,1) 100%);
-    height: 95vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+	background: rgb(0, 131, 22);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 131, 22, 1) 0%,
+		rgba(45, 201, 0, 1) 25%,
+		rgba(45, 201, 0, 1) 75%,
+		rgba(0, 131, 22, 1) 100%
+	); /*! I like the use of gradients */
+	/* height: 95vh; */
+	height: 100vh; /*! Since we have our header position: fixed now we can set the height to 100vh and the nav will always be on top anyways. I would be cautious w/ combining a absolute (50px) nav bar with a relative height showcase (95vh), as you can have the showcase not take up the entire browser height or it might take up to much. I didn't have that problem on my monitor for what its worth, but you might encounter that if you mix the two. */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column; /*! Added for after removing, the article tag. */
 }
 
-.mdl-flex, .btm-flex {
-    height: 50vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+.mdl-flex,
+.btm-flex {
+	height: 50vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
-section {    
-    flex: 1 1 50%;
-    height: 50vh;
+section {
+	flex: 1 1 50%; /*! My solution to this looked a little different, check it out in the harcourt_solution folder if you're interested. */
+	/* height: 50vh; */
+	height: 100%; /*? Parents height is already 50vh */
 }
 
-.text-mdl, .text-btm {
-    display: flex;
-    align-items: center;
+.text-mdl,
+.text-btm {
+	display: flex;
+	align-items: center;
 }
 
-.text-mdl {  
-    background: rgb(9,0,159);
-    background: linear-gradient(0deg, rgba(9,0,159,1) 0%, rgba(0,0,255,1) 25%, rgba(0,0,255,1) 75%, rgba(0,0,191,1) 100%);
-    text-align: right;
+.text-mdl {
+	background: rgb(9, 0, 159);
+	background: linear-gradient(
+		0deg,
+		rgba(9, 0, 159, 1) 0%,
+		rgba(0, 0, 255, 1) 25%,
+		rgba(0, 0, 255, 1) 75%,
+		rgba(0, 0, 191, 1) 100%
+	);
+	text-align: right; /*? I did justify which for the record I think looks worse. */
 }
 
-.text-btm {    
-    background: rgb(156,0,0);
-    background: linear-gradient(0deg, rgba(156,0,0,1) 0%, rgba(255,0,0,1) 25%, rgba(255,0,0,1) 75%, rgba(157,0,0,1) 100%);
-    text-align: left;
+.text-btm {
+	background: rgb(156, 0, 0);
+	background: linear-gradient(
+		0deg,
+		rgba(156, 0, 0, 1) 0%,
+		rgba(255, 0, 0, 1) 25%,
+		rgba(255, 0, 0, 1) 75%,
+		rgba(157, 0, 0, 1) 100%
+	);
+	text-align: left;
 }
 
 h2 {
-    text-decoration: underline;
-    padding-bottom: 1rem;
+	text-decoration: underline;
+	padding-bottom: 1rem;
 }
 
-.img-1, .img-2 {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;      
+.img-1,
+.img-2 {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.img-1 {    
-    background-image: url("img/darbyAndHeidi.jpg");
+/** Cute animals */
+.img-1 {
+	background-image: url('img/darbyAndHeidi.jpg');
 }
 
 .img-2 {
-    background-image: url("img/pancho.jpg"); 
+	background-image: url('img/pancho.jpg');
 }
 
-
 @media (max-width: 500px) {
-    
-    .btm-flex { 
-        flex-wrap: wrap-reverse;        
-    }
-    section {
-        flex: 1 1 100%;
-        height: 25vh;
-    }
-    .text-mdl , .text-btm {
-        text-align: center;
-    }
+	.btm-flex {
+		flex-wrap: wrap-reverse; /*! Nice! I did flex-direction: column-reverse; but I like this way as well! */
+	}
+
+	section {
+		flex: 1 1 100%;
+		height: 25vh;
+	}
+
+	.text-mdl,
+	.text-btm {
+		text-align: center;
+	}
 }
